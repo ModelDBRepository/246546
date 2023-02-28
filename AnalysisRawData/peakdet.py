@@ -1,14 +1,15 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Created on Wed Mar 15 15:21:06 2017
+Created on Wed Mar 15 15:21:06 2017.
 
 @author: spiros
 """
+import sys
+import numpy as np
 
-def peakdet(v, delta, threshold, x = None):
-    import sys
-    import numpy as np
+
+def peakdet(v, delta, threshold, x=None):
     """
     Converted from MATLAB script at http://billauer.co.il/peakdet.html
 

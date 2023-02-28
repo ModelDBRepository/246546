@@ -117,10 +117,8 @@ python poisson_input.py <total_number_of_runs> <poisson_rate>  # e.g., poisson_i
 # return to main directory
 cd ../
 
-
-
 # Run the simulation
-.x86_64/special -nogui -c nruns=<run_number> -c ntrials=<virtual_mouse_id> -c n_neuron=<deletion_type> Network_prelearning.hoc
+.x86_64/special -nogui -c n_runs=<run_number> -c n_trials=<virtual_mouse_id> -c n_neuron=<deletion_type> Network_prelearning.hoc
 
 #e.g., .x86_64/special -nogui -c nruns=1-c ntrials=1 -c n_neuron=No_VIPcells Network_prelearning.hoc
 
@@ -144,7 +142,7 @@ cd ../
 
 .x86_64/special -nogui -c nruns=<run_number> -c ntrials=<virtual_mouse_id> -c n_neuron=<deletion_type> Network_locomotion.hoc
 
-#e.g., .x86_64/special -nogui -c nruns=1-c ntrials=1 -c n_neuron=No_VIPcells Network_locomotion.hoc
+# e.g., .x86_64/special -nogui -c nruns=1-c ntrials=1 -c n_neuron=No_VIPcells Network_locomotion.hoc
 
 # Output of the simulation is saved into Simulation_Results/locomotion
 
@@ -155,8 +153,7 @@ cd ../
 cd AnalysisRawData
 
 # Exctract spike times
-
-python spiketimes_analysis.py <neuron_type> <learning_mode> <deletion_type> <number_of_trial> <number_of_run>
+python spiketimes_analysis.py <neuron_type> <deletion> <learning_mode> <number_of_trial> <number_of_run>
 
 # Valid <neuron_type> values:
 
@@ -168,7 +165,6 @@ python spiketimes_analysis.py <neuron_type> <learning_mode> <deletion_type> <num
 # _vipcck_   : VIP/CCK cells
 # _vipcr_    : VIP/CR PVM cells
 # _vipcrnvm_ : VIP/CR NVM cells
-
 
 # Valid <learning_mode> values:
 
@@ -229,19 +225,9 @@ python heatmaps_interneurons.py <number_of_trial> <deletion_type> <learning_mode
 # vipcr    : VIP/CR PVM cells
 # vipcrnvm : VIP/CR NVM cells
 
-
-
 python all_trials_paper_all.py # produces the altogether heatmaps
 python all_trials_paper_all_interneurons.py # produces the altogether heatmaps
 
 python all_trials_enrichment.py # produces the barplot with the enrichment for all deletion types and learning modes
 
-
 # for more information, refer to the comments inside the scripts or contact me in: chavlis [DOT] spiros [AT] gmail [DOT] com
-
-
-
-
-
-
-
